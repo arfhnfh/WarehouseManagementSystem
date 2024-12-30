@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Content above the bottom navigation -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+    android:orientation="vertical"
+    android:background="@drawable/gradient_background"
+    android:padding="16dp"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toTopOf="@id/bottom_navigation"> <!-- Constrained to the bottom navigation -->
+
+    <!-- Header -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="List Items"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:padding="8dp"
+        android:gravity="center"
+        android:textColor="@color/black" />
+
+    <!-- Rectangle Container -->
+    <LinearLayout
+        android:id="@+id/rectangle_1"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:background="@drawable/rectangle_reg"
+        android:padding="16dp"
+        android:elevation="4dp"
+        android:layout_marginBottom="8dp">
+
+        <!-- Item List -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Repeatable Card -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:background="@drawable/card_background"
+                    android:layout_marginBottom="10dp"
+                    android:elevation="4dp">
+
+                    <!-- Image Placeholder -->
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_marginEnd="16dp"
+                        android:src="@drawable/image_placeholder"
+                        android:contentDescription="Item Image" />
+
+                    <!-- Details Section -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Name: ________"
+                            android:textSize="16sp"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Barcode: ________"
+                            android:textSize="16sp"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Quantity: ________"
+                            android:textSize="16sp"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Location: ________"
+                            android:textSize="16sp"
+                            android:textColor="@color/black" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>
+
+    <!-- Bottom Navigation -->
+<LinearLayout
+android:id="@+id/bottom_navigation"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="horizontal"
+android:background="@color/bottom_nav_background"
+android:paddingVertical="8dp"
+android:weightSum="3"
+app:layout_constraintBottom_toBottomOf="parent"> <!-- Constrained to the bottom of the parent -->
+
+<ImageButton
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:src="@drawable/ic_home"
+    android:contentDescription="Home"
+    android:background="?attr/selectableItemBackgroundBorderless"
+    android:padding="8dp" />
+
+<ImageButton
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:src="@drawable/ic_add"
+    android:contentDescription="Add"
+    android:background="?attr/selectableItemBackgroundBorderless"
+    android:padding="8dp" />
+
+<ImageButton
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:src="@drawable/ic_profile"
+    android:contentDescription="Profile"
+    android:background="?attr/selectableItemBackgroundBorderless"
+    android:padding="8dp" />
+</LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
